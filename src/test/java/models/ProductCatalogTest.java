@@ -7,6 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Sharina Chavez-Lissjanis
+ */
 class ProductCatalogTest {
 
     /**
@@ -57,6 +60,10 @@ class ProductCatalogTest {
         assertNull(foundProduct);
     }
 
+    /**
+     * Tests the getHairCareProducts method.
+     * Asserts that the returned list of hair care products is not null, not empty, and has the expected size.
+     */
     @Test
     void testGetHairCareProducts() {
         List<Product> hairCareProducts = productCatalog.getHairCareProducts();
@@ -67,6 +74,10 @@ class ProductCatalogTest {
         assertEquals(6, hairCareProducts.size()); // Assuming there are 6 hair care products
     }
 
+    /**
+     * Tests the getSkinCareProducts method.
+     * Asserts that the returned list of skin care products is not null, not empty, and has the expected size.
+     */
     @Test
     void testGetSkinCareProducts() {
         List<Product> skinCareProducts = productCatalog.getSkinCareProducts();
@@ -77,6 +88,10 @@ class ProductCatalogTest {
         assertEquals(6, skinCareProducts.size()); // Assuming there are 6 skin care products
     }
 
+    /**
+     * Tests the displayProducts method.
+     * Asserts that the method executes without errors when displaying hair care products.
+     */
     @Test
     void testDisplayProducts() {
         List<Product> hairCareProducts = productCatalog.getHairCareProducts();
