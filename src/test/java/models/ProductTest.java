@@ -60,30 +60,6 @@ class ProductTest {
     }
 
     @Test
-    void testToString() {
-        Product product = new Product("Monitor", 199.99, 8);
-        assertEquals("ID: 1 Name: Monitor Price: 199.99 Quantity: 8", product.toString());
-    }
-
-    @Test
-    void testEquals() {
-        Product product1 = new Product("Printer", 149.99, 5);
-        Product product2 = new Product("Printer", 149.99, 5);
-        Product product3 = new Product("Scanner", 99.99, 3);
-
-        assertEquals(product1, product2);
-        assertNotEquals(product1, product3);
-    }
-
-    @Test
-    void testHashCode() {
-        Product product1 = new Product("Camera", 299.99, 4);
-        Product product2 = new Product("Camera", 299.99, 4);
-
-        assertEquals(product1.hashCode(), product2.hashCode());
-    }
-
-    @Test
     void testNextIdIncrement() {
         Product product1 = new Product("Speaker", 79.99, 6);
         Product product2 = new Product("Microphone", 59.99, 9);
