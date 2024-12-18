@@ -7,6 +7,14 @@ import models.ShoppingCart;
 
 import java.util.*;
 
+/**
+ * @author Jessica, Najib, Sharina
+ *
+ * This app is similiar to an online store where you enter as a customer and get to enter your
+ * information. Then a Customer object is created who can browse around the store, make purchases
+ * and view order history.
+ *
+ */
 public class Main {
     private static final ProductCatalog catalog = new ProductCatalog();
 
@@ -60,6 +68,9 @@ public class Main {
         }
     }
 
+    /**
+     * This method displays the options ath hand for the customer.
+     */
     private static void displayMainMenu() {
         System.out.println("\n" + "Main Menu:");
         System.out.println("1. View All Products");
@@ -70,6 +81,11 @@ public class Main {
         System.out.println();
     }
 
+    /**
+     * Shows a view of all products in the store
+     * @param scanner gives the customer a choice to pick something
+     * @param customer is the customer that was created
+     */
     private static void viewAllProducts(Scanner scanner, Customer customer) {
         System.out.println("\n" + "All Products:");
         catalog.displayProducts(catalog.getHairCareProducts());
@@ -77,6 +93,12 @@ public class Main {
         selectProduct(scanner, customer);
     }
 
+    /**
+     * Gives the option of seeing products by category or to go back to main menu
+     *
+     * @param scanner gives the customer a choice to pick something
+     * @param customer is the customer that was created
+     */
     private static void viewCategories(Scanner scanner, Customer customer) {
         System.out.println("\n" + "Select a category:");
         System.out.println("1. Hair Care");
@@ -99,9 +121,15 @@ public class Main {
                 System.out.println("Invalid choice. Please try again.");
         }
         System.out.println();
-
     }
 
+    /**
+     * Shows a view of all products by category.
+     *
+     * @param products the category of choice.
+     * @param scanner gives the customer a choice to pick something.
+     * @param customer is the user.
+     */
     private static void displayCategoryProducts(List<Product> products, Scanner scanner, Customer customer) {
         System.out.println();
         System.out.println("Products in category:");
@@ -109,6 +137,13 @@ public class Main {
         selectProduct(scanner, customer);
     }
 
+    /**
+     * A product selection menu that is linked to the productID. Checks for illegal choices of
+     * quantity.
+     *
+     * @param scanner gives the customer a choice to pick something.
+     * @param customer is the user.
+     */
     private static void selectProduct(Scanner scanner, Customer customer) {
         System.out.print("\n" + "Enter the ID of the product you want to view (or 0 to go back): ");
         int productId = scanner.nextInt();
@@ -142,6 +177,14 @@ public class Main {
         }
     }
 
+    /**
+     * Lets the customer add the product to the cart. Checks for illegal options of quantity.
+     * Then back to an option menu.
+     *
+     * @param product is the requested product.
+     * @param scanner gives the user a way to choose an option.
+     * @param newCustomer is the user.
+     */
     private static void addToCart(Product product, Scanner scanner, Customer newCustomer) {
         System.out.println();
         System.out.print("Enter the quantity to add to cart: ");
@@ -181,6 +224,11 @@ public class Main {
         }
     }
 
+    /**
+     * A view of the cart and an option-menu following.
+     * @param scanner gives the user an option to choose with.
+     * @param newCustomer is the user.
+     */
     private static void viewCart(Scanner scanner, Customer newCustomer) {
         System.out.println("\n" + "Your Cart:");
         newCustomer.getCart().displayCart();
@@ -208,6 +256,13 @@ public class Main {
         }
     }
 
+    /**
+     * Removes a product from the cart by getting the id and then calling the remove-method
+     * from ShoppingCart.
+     *
+     * @param scanner gives the user an option to choose.
+     * @param newCustomer is the user.
+     */
     private static void removeItemFromCart(Scanner scanner, Customer newCustomer) {
         System.out.println("\n" + "Your Cart:");
         newCustomer.getCart().displayCart();
