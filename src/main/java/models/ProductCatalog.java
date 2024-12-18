@@ -3,10 +3,19 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Sharina Chavez-Lissjanis
+ * Represents a catalog of products, categorized into hair care and skin care products.
+ * Theclass provides methods to manage and retrieve products from the catalog.
+ */
 public class ProductCatalog {
     private List<Product> hairCareProducts = new ArrayList<>();
     private List<Product> skinCareProducts = new ArrayList<>();
 
+    /**
+     * Initializes the product catalog.
+     * Each product is added with a name, price, and initial quantity.
+     */
     public ProductCatalog() {
         // hairCare products
         hairCareProducts.add(new Product("Shampoo1", 8.0, 3));
@@ -25,6 +34,13 @@ public class ProductCatalog {
         skinCareProducts.add(new Product("Body Lotion2", 20.0, 15));
     }
 
+    /**
+     * Finds a product in the catalog by its unique ID.
+     * The method searches through both hair care and skin care product lists.
+     *
+     * @param id The unique ID of the product to search for.
+     * @return The Product object if found, or null if no product matches the given ID.
+     */
     public Product findProductById(int id) {
         List<Product> allProducts = new ArrayList<>();
         allProducts.addAll(hairCareProducts);
@@ -38,14 +54,30 @@ public class ProductCatalog {
         return null; // Return null if no product is found
     }
 
+    /**
+     * Retrieves the list of hair care products in the catalog.
+     *
+     * @return A list of hair care products.
+     */
     public List<Product> getHairCareProducts() {
         return hairCareProducts;
     }
 
+    /**
+     * Retrieves the list of skin care products in the catalog.
+     *
+     * @return A list of skin care products.
+     */
     public List<Product> getSkinCareProducts() {
         return skinCareProducts;
     }
 
+    /**
+     * Displays the details of all products in the provided list.
+     * This method prints each product's information to the console.
+     *
+     * @param products The list of products to display.
+     */
     // Added method to display products
     public void displayProducts(List<Product> products) {
         for (Product product : products) {
