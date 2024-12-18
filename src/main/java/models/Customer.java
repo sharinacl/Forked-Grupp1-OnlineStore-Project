@@ -1,10 +1,17 @@
 package models;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import models.Product;
+import models.ShoppingCart;
+import utilities.*;
 import utilities.CustomerGender;
+
+
 
 /**
  * To make a unique customer.
