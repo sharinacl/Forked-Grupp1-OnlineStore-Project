@@ -73,29 +73,48 @@ public class Product {
 
     /**
      *
-     * @return
+     * @return cost of the item.
      */
     public double calculateCost() {
         return price * quantity;
     }
 
+    /**
+     *
+     * @return productID
+     */
     public int getProductId() {
         return productId;
     }
 
+    /**
+     *
+     * @return product name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return product price.
+     */
     public double getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @return product quantity.
+     */
     public int getQuantity() {
         return quantity;
     }
 
-
+    /**
+     *
+     * @param quantity new quantity to be given so the object
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
