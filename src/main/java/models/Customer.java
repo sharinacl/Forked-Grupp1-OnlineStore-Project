@@ -1,9 +1,17 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import utilites.*;
+
+import models.Product;
+import models.ShoppingCart;
+import utilities.*;
+import utilities.CustomerGender;
+
+
 
 /**
  * To make a unique customer.
@@ -98,7 +106,7 @@ public class Customer {
     /**
      * For the customer to place an order..
      * 
-     * @param product product to put into the order.
+     * @param product to put into the order.
      */
     public void placeOrder() {
         if (cart.getProductsInCart().isEmpty()) {
