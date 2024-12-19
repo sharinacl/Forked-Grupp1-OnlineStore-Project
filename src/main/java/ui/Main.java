@@ -243,7 +243,6 @@ public class Main {
             case 1:
                 System.out.println("\n" + "Thank you for your purchase!");
                 newCustomer.placeOrder();
-                displayMainMenu();
                 break;
             case 2:
                 removeItemFromCart(scanner, newCustomer);
