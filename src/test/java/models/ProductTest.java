@@ -1,4 +1,5 @@
 
+
 package models;
 
 import org.junit.jupiter.api.*;
@@ -105,6 +106,55 @@ class ProductTest {
 
         assertEquals(1, product1.getProductId());
         assertEquals(2, product2.getProductId());
+    }
+
+    /**
+     * Tests that the Product constructor throws an IllegalArgumentException
+     * when a negative quantity is provided.
+     */
+    @Test
+    void testProductConstructorWithNegativeQuantity() {
+        assertThrows(IllegalArgumentException.class, () -> new Product("Laptop", 999.99, -1));
+    }
+
+    /**
+     * Tests that the createForCart method throws an IllegalArgumentException
+     * when a negative quantity is provided.
+     */
+    @Test
+    void testCreateForCartWithNegativeQuantity() {
+        Product product = new Product("Phone", 599.99, 20);
+        assertThrows(IllegalArgumentException.class, () -> product.createForCart(-1));
+    }
+
+    /**
+     * Tests that the takeFromShelf method throws an IllegalArgumentException
+     * when trying to take more items than available.
+     */
+    @Test
+    void testTakeFromShelfWithExcessQuantity() {
+        Product product = new Product("Tablet", 299.99, 15);
+        assertThrows(IllegalArgumentException.class, () -> product.takeFromShelf(20));
+    }
+
+    /**
+     * Tests that the putBackOnShelf method throws an IllegalArgumentException
+     * when trying to put back a negative quantity.
+     */
+    @Test
+    void testPutBackOnShelfWithNegativeQuantity() {
+        Product product = new Product("Headphones", 149.99, 5);
+        assertThrows(IllegalArgumentException.class, () -> product.putBackOnShelf(-1));
+    }
+
+    /**
+     * Tests that the setQuantity method throws an IllegalArgumentException
+     * when trying to set a negative quantity.
+     */
+    @Test
+    void testSetQuantityWithNegativeQuantity() {
+        Product product = new Product("Mouse", 29.99, 7);
+        assertThrows(IllegalArgumentException.class, () -> product.setQuantity(-1));
     }
 
 }
