@@ -40,7 +40,7 @@ mvn clean package
 #### 3. Run the Jar-file
 
 ```sh
-java -jar Online-Store-Project-1.0-SNAPSHOT.jar
+java -jar target/Online-Store-Project-1.0-SNAPSHOT.jar
 ```
 
 
