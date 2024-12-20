@@ -30,7 +30,7 @@ To build and run the application, you need the following:
 #### 1. Clone The Repository
 
 ```sh
-git clone [https://github.com/NajibBardash/Grupp1-OnlineStore-Project.git]
+git clone https://github.com/NajibBardash/Grupp1-OnlineStore-Project.git
 ```
 #### 2. Clean the History
 
