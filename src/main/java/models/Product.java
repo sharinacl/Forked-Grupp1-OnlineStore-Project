@@ -23,6 +23,9 @@ public class Product {
      * @param quantity The initial quantity of the product.
      */
     public Product(String name, double price, int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative.");
+        }
         this.productId = nextId++;
         this.name = name;
         this.price = price;
@@ -39,6 +42,9 @@ public class Product {
      * @param quantity  The quantity of the product in the cart.
      */
     private Product(int productId, String name, double price, int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative.");
+        }
         this.productId = productId;
         this.name = name;
         this.price = price;
@@ -51,6 +57,9 @@ public class Product {
      * @return A new Product instance ant its specified quantity.
      */
     public Product createForCart(int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative.");
+        }
         return new Product(this.productId, this.name, this.price, quantity);
     }
 
@@ -59,6 +68,9 @@ public class Product {
      * @param qty The quantity to be taken from the shelf.
      */
     public void takeFromShelf(int qty) {
+        if (qty > quantity) {
+            throw new IllegalArgumentException("Cannot take more items than available on the shelf.");
+        }
         quantity -= qty;
     }
 
@@ -68,6 +80,9 @@ public class Product {
      * @param qty The quantity to be put back on the shelf.
      */
     public void putBackOnShelf(int qty) {
+        if (qty < 0) {
+            throw new IllegalArgumentException("Quantity to be put back cannot be negative.");
+        }
         quantity += qty;
     }
 
@@ -116,6 +131,9 @@ public class Product {
      * @param quantity new quantity to be given so the object
      */
     public void setQuantity(int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative.");
+        }
         this.quantity = quantity;
     }
 
