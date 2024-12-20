@@ -1,5 +1,5 @@
 # Online-Shopping
-### _Developers Shaina, Najib, Jessica_
+### _Developers Sharina, Najib, Jessica_
 
 >A shopping application for browsing, addind to cart and placing orders. Demonstartes coding and computational thinking in a real-world application. Highlights the importance of teamwork, version control and auromated testing.
 
@@ -10,7 +10,7 @@ Users can browse through a list of products divided into different categories, s
 - **Create a Customer**: 
 Users can create an account to make purchases.
 Upon logging in, users can access their previous order history.
-- **Shoppinf Cart**: 
+- **Shopping Cart**: 
 Users can add products to their shopping cart for later purchase.
 In the shopping cart, users can adjust the quantity of each product or remove products.
 The cart automatically updates when new products are added or removed.
