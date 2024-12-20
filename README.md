@@ -32,7 +32,7 @@ To build and run the application, you need the following:
 ```sh
 git clone https://github.com/NajibBardash/Grupp1-OnlineStore-Project.git
 ```
-#### 2. Clean the History
+#### 2. Go to the root folder that was created and Clean the History
 
 ```sh
 mvn clean package
